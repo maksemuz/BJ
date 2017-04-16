@@ -5,7 +5,7 @@ require_relative 'spades'
 
 class Desk
 
-  RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
+  RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
   SUITS = [Diamonds, Clubs, Hearts, Spades]
 
   def initialize
@@ -23,6 +23,3 @@ class Desk
   end
 
 end
-
-dsk1 = Desk.new
-dsk1.get_desk.each {|card| puts "#{card.rank},\t#{card.suit},\t#{card.code.chr(Encoding::UTF_8)}"}

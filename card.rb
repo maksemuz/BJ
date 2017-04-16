@@ -5,6 +5,10 @@ class Card
   def initialize(rank, suit = self.class)
     @rank = rank
     @suit = suit
-    @code = self.class::CODE
+    @code = self.class::CODE.chr(Encoding::UTF_8)
+  end
+
+  def carta
+    "#{@code}#{@rank}"
   end
 end
