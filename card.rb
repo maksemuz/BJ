@@ -8,7 +8,7 @@ class Card
     @code = self.class::CODE.chr(Encoding::UTF_8)
   end
 
-  def carta
+  def get
     "#{@code}#{@rank}"
   end
 end
