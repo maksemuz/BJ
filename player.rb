@@ -1,8 +1,3 @@
-require_relative 'diamonds'
-require_relative 'clubs'
-require_relative 'hearts'
-require_relative 'spades'
-
 class Player
   attr_accessor :cash, :cards
 
@@ -12,18 +7,26 @@ class Player
   end
 
   def show_cards
-    @cards.map {|card| card.picture}.join("")
+    @cards.map(&:picture).join('')
   end
 
   def hide_cards
-    @cards.map {|card| card.cover}.join("")
+    @cards.map(&:cover).join('')
   end
 
   def pay
     @cash -= 10
   end
 
-  def get_points
+  def no_cash?
+    @cash <= 0
+  end
+
+  def not_three_cards?
+    @cards.size < 3
+  end
+
+  def check_points
     @points = 0
     @cards.each do |card|
       @points += card.value
@@ -32,5 +35,9 @@ class Player
       @points -= 10 if card.rank == 'A' && @points > 21
     end
     @points
+  end
+
+  def over?
+    check_points > 21
   end
 end

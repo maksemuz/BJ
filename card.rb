@@ -1,10 +1,10 @@
 class Card
   attr_accessor :rank, :code
-  CODE = nil
 
-  def initialize(rank)
+  def initialize(rank, suit, code)
     @rank = rank
-    @code = self.class::CODE.chr(Encoding::UTF_8)
+    @suit = suit
+    @code = code.chr(Encoding::UTF_8)
   end
 
   def picture
@@ -12,13 +12,13 @@ class Card
   end
 
   def cover
-    "| ** |"
+    '| ** |'
   end
 
   def value
-    if (2..10).include? @rank
+    if (2..10).cover? @rank
       @rank
-    elsif ['J', 'Q', 'K'].include? @rank
+    elsif %w(J Q K).include? @rank
       10
     else
       11

@@ -1,4 +1,3 @@
-#!/usr/local/bin/ruby -w
 
 require_relative 'engine'
 include Engine
@@ -11,4 +10,3 @@ loop do
   main_menu(@start_options)
   again?
 end
-
