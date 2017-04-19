@@ -1,14 +1,27 @@
 class Card
-  attr_accessor :rank, :suit, :code
+  attr_accessor :rank, :code
   CODE = nil
 
-  def initialize(rank, suit = self.class)
+  def initialize(rank)
     @rank = rank
-    @suit = suit
     @code = self.class::CODE.chr(Encoding::UTF_8)
   end
 
-  def get
-    "#{@code}#{@rank}"
+  def picture
+    "| #{@rank}#{@code} |"
+  end
+
+  def cover
+    "| ** |"
+  end
+
+  def value
+    if (2..10).include? @rank
+      @rank
+    elsif ['J', 'Q', 'K'].include? @rank
+      10
+    else
+      11
+    end
   end
 end

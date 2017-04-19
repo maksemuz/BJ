@@ -1,4 +1,4 @@
-require_relative 'diams'
+require_relative 'diamonds'
 require_relative 'clubs'
 require_relative 'hearts'
 require_relative 'spades'
@@ -9,17 +9,19 @@ class Desk
   SUITS = [Diamonds, Clubs, Hearts, Spades]
 
   def initialize
-    @mixed_desk ||= []
+    @desk ||= []
     RANKS.each do |rank|
       SUITS.each do |suit|
-        @mixed_desk.insert(rand(51), suit.new(rank))
-        @mixed_desk.delete(nil)
+        @desk.insert(rand(51), suit.new(rank))
+        @desk.delete(nil)
       end
     end
   end
 
-  def get_desk
-    @mixed_desk
+  def get_card
+    out = @desk.first
+    @desk = @desk.drop(1)
+    out
   end
 
 end
