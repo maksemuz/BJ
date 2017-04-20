@@ -10,13 +10,12 @@ class Desk
       SUITS.values.each do |code|
         @desk.insert(rand(51), Card.new(rank, code))
         @desk.delete(nil)
+        @desk.shuffle!(random: Random.new(51))
       end
     end
   end
 
   def one_card
-    out = @desk.first
-    @desk = @desk.drop(1)
-    out
+    @desk.pop
   end
 end

@@ -4,8 +4,8 @@ require_relative 'checks'
 include Checks
 include Engine
 
-@gamer = Player.new
-@dealer = Player.new
+@gamer = Player.new('Вы')
+@dealer = Player.new('Казино')
 
 start
 loop do

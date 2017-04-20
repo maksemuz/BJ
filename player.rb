@@ -1,9 +1,10 @@
 class Player
-  attr_accessor :cash, :cards
+  attr_accessor :cash, :cards, :name
 
-  def initialize
+  def initialize(name)
     @cash = 100
     @cards = []
+    @name = name
   end
 
   def show_cards
