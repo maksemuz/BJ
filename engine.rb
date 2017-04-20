@@ -8,7 +8,8 @@ module Engine
       quit: 'Выход',
       pass: 'Пропустить ход',
       take_card: 'Взять карту',
-      open: 'Открыть карты'
+      who_wins?: 'Открыть карты'
+    #open: 'Открыть карты'
     }
     @gamer.cards.clear
     @dealer.cards.clear
@@ -48,10 +49,6 @@ module Engine
       puts "Пропустил ход"
     end
     main_menu(@start_options)
-  end
-
-  def open
-    who_wins?
   end
 
   def quit
