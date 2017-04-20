@@ -25,7 +25,7 @@ module Checks
     puts "Общий проигрыш. Ваш счет: #{@gamer.cash}" if pobeditel.nil?
   end
 
-  def again?
+  def again
     print 'Играем еще? (Да = 1, Нет = 0): '
     if gets.strip.to_i == 1
       start

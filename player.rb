@@ -19,7 +19,7 @@ class Player
     @cash -= 10
   end
 
-  def any_cash?
+  def any_cash
     if @cash <= 0
       puts "Ваш счет: #{@cash}. Недостаточно денег для продолжения игры."
       exit

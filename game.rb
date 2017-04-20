@@ -10,6 +10,6 @@ include Engine
 start
 loop do
   main_menu(@start_options)
-  @gamer.any_cash?
-  again?
+  @gamer.any_cash
+  again
 end
