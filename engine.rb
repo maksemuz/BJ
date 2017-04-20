@@ -1,8 +1,6 @@
 module Engine
   require_relative 'desk'
   require_relative 'player'
-  require_relative 'checks'
-  include Checks
 
   def start
     @desk = Desk.new
@@ -54,10 +52,6 @@ module Engine
 
   def open
     who_wins?
-    if @gamer.no_cash?
-      puts "Ваш счет: #{@gamer.cash}. Недостаточно денег для продолжения игры."
-      exit
-    end
   end
 
   def quit

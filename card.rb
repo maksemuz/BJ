@@ -1,9 +1,8 @@
 class Card
   attr_accessor :rank, :code
 
-  def initialize(rank, suit, code)
+  def initialize(rank, code)
     @rank = rank
-    @suit = suit
     @code = code.chr(Encoding::UTF_8)
   end
 

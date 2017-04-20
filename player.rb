@@ -18,8 +18,11 @@ class Player
     @cash -= 10
   end
 
-  def no_cash?
-    @cash <= 0
+  def any_cash?
+    if @cash <= 0
+      puts "Ваш счет: #{@cash}. Недостаточно денег для продолжения игры."
+      exit
+    end
   end
 
   def not_three_cards?

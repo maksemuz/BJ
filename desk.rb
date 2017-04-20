@@ -7,8 +7,8 @@ class Desk
   def initialize
     @desk ||= []
     RANKS.each do |rank|
-      SUITS.each do |suit, code|
-        @desk.insert(rand(51), Card.new(rank, suit, code))
+      SUITS.values.each do |code|
+        @desk.insert(rand(51), Card.new(rank, code))
         @desk.delete(nil)
       end
     end
